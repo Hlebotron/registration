@@ -8,11 +8,11 @@
 		<div class="div" id="input">
 			<h1 id="inputTitle">What's your name?</h1>
 			<input placeholder='Input your name' id='name'>
-			<button onclick="validate(nameElement.value)">Submit</button>
+			<button id="inputButton" onclick="validate(nameElement.value); localStorage.setItem('name', localStorage.getItem('newName'))">Submit</button>
 		</div>
 		<div class="div" id="validation">
 			<h1>Validation</h1>
-			<button id="inputButton" onclick="switchName()">Switch Name</button>
+			<button onclick="changeName()">Switch Name</button>
 		</div>
 	</body>
 	<script src="script.js"></script>
