@@ -83,7 +83,7 @@ function show(id, inner) {
 }*/
 
 let lsName = localStorage.getItem("name"); 
-if (lsName != null && lsName != "") {
+/*if (lsName != null && lsName != "") {
 	validationDiv.style.opacity = 1;
 	inputDiv.style.zIndex = 0;
 	validationDiv.style.zIndex = 1;
@@ -91,7 +91,4 @@ if (lsName != null && lsName != "") {
 	inputDiv.style.opacity = 1;
 	inputDiv.style.zIndex = 1;
 	validationDiv.style.zIndex = 0;
-}
-//let html = hide("validation");
-//show ("validation", html);
-
+}*/

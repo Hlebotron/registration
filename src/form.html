@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Presence</title>
+		<script src="htmx"></script>
+		<script src="script.js"></script>
+		<style></style>
+	</head>
+	<body>
+		<div class="div" id="input">
+			<h1 id="inputTitle">What's your name?</h1>
+			<form hx-post="/form">
+				<input placeholder='Input your name' hx-on:htmx:validation:validate="validate(nameElement.value); localStorage.setItem('name', localStorage.getItem('newName'))" id='name'>
+				<button id="inputButton" onclick="">Submit</button>
+			</form>
+		</div>
+		<!--<div class="div" id="validation">
+			<h1>Validation</h1>
+			<button onclick="changeName()">Switch Name</button>
+		</div>-->
+	</body>
+</html>
