@@ -552,7 +552,7 @@ fn main() {
     //  Actions:
     //      Add(Name, ClassNum, ClassLetter) -> Id
     //      Rename(Id, NewName) -> IsSuccess
-    let (tx_http, rx_pg) = channel::<Action>();
+    let (tx_http, rx_pg) = channel::<UserAction>();
     //let (tx_pg, rx_http) = channel::<>();
     let thread_pool = ThreadPool::new(10, Some(10)).unwrap();
     thread::scope(|s| {
@@ -599,7 +599,7 @@ fn main() {
                 i!("Created table {}", &date_fmt);
             }
             let new_person = client.prepare_typed(&format!("INSERT INTO {} VALUES ($1, $2, $3)", &date_fmt), &[Type::VARCHAR, Type::INT2, Type::CHAR]).unwrap();
-            for query in pg_rx.iter() {
+            for query in rx_pg.iter() {
                 println!("pog");
             }
             add_record(&mut client, new_person, "jogger", 12, 'C');
